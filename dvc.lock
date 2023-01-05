@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  splitter:
+    cmd: python src/split.py data/apptomdata
+    deps:
+    - path: data/apptomdata
+      md5: 3ef8f5ef3972c20b9ca93e31a383163a.dir
+      size: 2417761
+      nfiles: 391
+    - path: src/split.py
+      md5: 4088716b4933699b925ae157d2c2de26
+      size: 1347
+    params:
+      params.yaml:
+        split.percentage: 0.8
+        split.seed: 42
+    outs:
+    - path: data/prepared
+      md5: ba1b780ae5b807e8ccf705021bde4413.dir
+      size: 2417761
+      nfiles: 391
+  resizer:
+    cmd: python src/resize.py data/prepared
+    deps:
+    - path: data/prepared
+      md5: ba1b780ae5b807e8ccf705021bde4413.dir
+      size: 2417761
+      nfiles: 391
+    - path: src/resize.py
+      md5: 9eb68f3dbfa9de2eda388cfcd18d17b6
+      size: 904
+    params:
+      params.yaml:
+        resize.height: 300
+        resize.width: 300
+    outs:
+    - path: data/resized
+      md5: ff9d99bc2aaa71d48ba6af8f55c4d77d.dir
+      size: 4663453
+      nfiles: 391

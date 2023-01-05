@@ -1,0 +1,6 @@
+split:
+  percentage: 0.80
+  seed: 42
+resize:
+  width: 300
+  height: 300

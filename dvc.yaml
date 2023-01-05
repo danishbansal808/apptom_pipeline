@@ -1,0 +1,21 @@
+stages:
+  splitter:
+    cmd: python src/split.py data/apptomdata
+    deps:
+    - data/apptomdata
+    - src/split.py
+    params:
+    - split.percentage
+    - split.seed
+    outs:
+    - data/prepared
+  resizer:
+    cmd: python src/resize.py data/prepared
+    deps:
+    - data/prepared
+    - src/resize.py
+    params:
+    - resize.width
+    - resize.height
+    outs:
+    - data/resized
