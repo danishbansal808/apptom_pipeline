@@ -1,0 +1,12 @@
+md5: cbfb58ed6a7b55c65327862d509ba075
+frozen: true
+deps:
+- path: data/raw_data
+  repo:
+    url: https://github.com/danishbansal808/apple_or_tomato.git
+    rev_lock: a064fab268afd7f856b9eebbb9bfb0e951c3a02b
+outs:
+- md5: 3ef8f5ef3972c20b9ca93e31a383163a.dir
+  size: 2417761
+  nfiles: 391
+  path: apptomdata
